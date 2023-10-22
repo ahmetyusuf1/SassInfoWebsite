@@ -1,0 +1,274 @@
+@import './flex';
+@import './modules';
+@import './colors';
+@import './buttons';
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;      
+    }
+}
+
+// Reset Settings
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+// Navbar Area Start
+
+.navbar {
+    @include firstFlex;
+    @extend %navBoxShadow;
+
+    &_links {
+        display: flex;
+        gap: 10px;
+        font-size: 20px;
+
+        a {
+            @extend %navLink;
+
+            &:hover {
+                color: $secondary-color;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+// Navbar Area End
+
+// Info Area Start
+
+.section {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 99%;
+        height: 100%;
+
+        &_css_area {
+            @include secondFlex;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius: 10px;
+
+            .images {
+                display: flex;
+                justify-content: center;
+                flex: 1;
+            }
+
+            &_sec {
+                flex: 2;
+                text-align: center;
+
+                h3 {
+                    color: $primary-color;
+                }
+
+                p {
+                    color: grey;
+                }
+            }
+        }
+
+        .vs {
+            text-align: center;
+            color: $text-color;
+            font-size: 34px;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        &_sass_area {
+            @extend .container_css_area;
+            flex-direction: row-reverse;
+
+            .images {
+                display: flex;
+                justify-content: center;
+                flex: 1;
+            }
+
+            &_sec {
+                flex: 2;
+                text-align: center;
+
+                h3 {
+                    color: $text-color;
+                }
+
+                p {
+                    color: grey;
+                }
+            }
+
+        }
+    }
+}
+
+// Info Area End
+
+
+// Info Container Area Start
+
+.second_section {
+
+    .info_container {
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(225deg,
+        #ff3cac 0%,
+        #784ba0 50%,
+        #2b86c5 100%);
+        border-radius: 10px;
+
+        @include firstFlex;
+        @include mobile {
+            flex-direction: column;
+        }
+
+        &_sec {
+            text-align: center;
+
+            h1 {
+                color: #364a5e;
+            }
+
+            p {
+                color: #fff;
+                margin: 20px 0;
+            }
+
+            .btn {
+                @include firstButton;
+            }
+        }
+    }
+}
+
+// Info Container Area Start
+
+// Contact Area Start
+
+.contact_section {
+    width: 100%;
+    height: 90vh;
+    padding: 50px 0;
+
+    .contact_area {
+        width: 100%;
+        height: 100%;
+        @include firstFlex;
+        @include mobile {
+            flex-direction: column
+        }
+
+        &_images {
+            @include secondFlex;
+            flex-direction: column;
+            
+            img {
+                width: 150px;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: end;
+            width: 50%;
+
+            input {
+                padding: 5px 4px;
+                border-radius: 5px;
+                border: 1px solid grey;
+                text-align: end;
+            }
+
+            .btn {
+                text-align: center;
+                margin-top: 30px;
+
+                button {
+                    @include secondButton;
+                }
+            }
+        }
+    }
+}
+
+// Contact Area End
+
+// Footer Start
+
+footer {
+    width: 100%;
+    background-color: #364a5e;
+
+    .footer_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &_contact {
+            @include firstFlex;
+            width: 80%;
+            height: 200px;
+            border-bottom: 1px solid #000;
+            margin-bottom: 50px;
+
+            span i {
+                color: #fff;
+                margin-right: 5px;
+            }
+        }
+
+        &_info {
+            width: 90%;
+            @include secondFlex;
+
+            &_contact {
+                line-height: 25px;
+
+                p {
+                    white-space: nowrap;
+
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+
+            &_social_media {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                a {
+                    color: #fff;
+
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            &_img img {
+                width: 100px;
+            }
+        }
+
+    }
+}

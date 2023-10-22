@@ -1,0 +1,25 @@
+@mixin firstButton {
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fa8bff;
+    background: linear-gradient(45deg,#fa8bff 0%,#2bd2ff 52%,#2bff88 90%);
+
+    &:hover {
+        transform: scale(0.9);
+        transition: 500ms;
+    }
+} 
+
+@mixin secondButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: #fa8bff;
+    background: linear-gradient(45deg,#fa8bff 0%,#2bd2ff 52%,#2bff88 90%);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}

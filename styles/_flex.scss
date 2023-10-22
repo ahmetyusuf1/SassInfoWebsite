@@ -1,0 +1,12 @@
+@mixin firstFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin secondFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @content;
+}
