@@ -28,6 +28,8 @@
 
 <li>SASS</li>
 
+<li>SCSS</li>
+
 </ul>
 
 <h1>Screen Gif</h1>
