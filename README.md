@@ -15,6 +15,9 @@
 <ul>
   <li>HTML</li>
   <li>CSS</li>
+  <li>SCSS</li>
+  <li>SASS</li>
+  <li>Bootstrap</li>
 </ul>
 
 <h1>Screen Gif</h1>
